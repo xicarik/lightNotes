@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/uikit.min.css">
+    <link rel="shortcut icon" href="img/logo.png" type="image/png">
+    <title>Add note | LightNotes</title>
+</head>
+
+<body>
+    <header class="uk-sticky uk-background-muted uk-sticky-fixed" uk-sticky>
+        <div class="uk-container uk-container-large">
+            <nav class="uk-navbar" uk-navbar="">
+                <div class="uk-navbar-left">
+                    <a href="index.html" class="uk-logo uk-navbar-item">
+                        <img src="img/logo.png" alt="logo"> LightNotes
+                    </a>
+                </div>
+                <div class="uk-navbar-right">
+                    <a href="#" class="uk-button uk-button-primary"><span uk-icon="icon: plus"></span></a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="uk-section">
+        <div class="uk-container uk-container-large">
+
+            <div class="uk-margin">
+                <label>Enter handwritten text:</label>
+                <canvas width="800" height="300"></canvas>
+                <button class="uk-button uk-button-default" id="convert">Convert to printed text</button>
+                <button class="uk-button uk-button-danger" id="clean">Clean</button>
+            </div>
+            <div class="uk-margin">
+                <label>Title:</label>
+                <input class="uk-input" type="text" id="newTitle">
+            </div>
+            <div class="uk-margin">
+                <label>Contents:</label>
+                <textarea class="uk-textarea" id="newContents"></textarea>
+            </div>
+            <div class="uk-margin">
+                <button class="uk-button uk-button-primary" id="submit">Create</button>
+            </div>
+
+        </div>
+    </main>
+
+    <div id="modal" class="uk-flex-top" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+            <progress id="progressbar" class="uk-progress" value="0" max="1"></progress>
+        </div>
+    </div>
+
+    <script src="js/handlebars-v4.1.2.js"></script>
+    <script src='https://unpkg.com/tesseract.js@v2.0.0-alpha.8/dist/tesseract.min.js'></script>
+    <script src="js/lib.js"></script>
+    <script src="js/addNote.js"></script>
+    <script src="js/uikit.min.js"></script>
+    <script src="js/uikit-icons.min.js"></script>
+</body>
+
+</html>
